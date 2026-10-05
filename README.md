@@ -1,65 +1,55 @@
-<div align="center">
+# Quiz Game · کوییز مرحله‌ای
 
-<img src="./assets/banner.svg" alt="Quiz Game" width="100%" />
+<p align="center"><img src="assets/hero.png" alt="Quiz Game" width="100%"></p>
 
-</div>
+<p align="center">
+<img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white">
+<img src="https://img.shields.io/badge/Timed_input-6s-FBBF24?style=for-the-badge">
+<img src="https://img.shields.io/badge/Persian_trivia-0F172A?style=for-the-badge">
+<img src="https://img.shields.io/badge/7_levels-F97316?style=for-the-badge">
+</p>
 
-# Quiz Game
+Inspired by the energy of Iranian **Quiz of Kings**-style duels — but offline, in your terminal, with a hard clock.
 
-Python simulator inspired by the Iranian Quiz-of-Kings style duel experience.
+## Match format
 
----
+| Knob | Value |
+|------|-------|
+| Levels | **7** |
+| Questions / level | **5** |
+| Time / question | **6 seconds** (threaded input) |
+| Persist | `quiz_progress.json` |
 
-## English
-
-
-
-### Features
-
-- Turn-based quiz / duel style gameplay (see source for modes)
-- Persian UI copy and prompts
-- Lightweight Python script — easy to run and extend
-
-### Stack
-
-Python
-
-### Getting started
+Bank covers geography, science, literature, sports, and CS — all prompts in Persian.
 
 ```bash
-git clone https://github.com/yasinfallahati/Quiz_game.git
-cd Quiz_game
-python "Quiz game.py"
+python3 "Quiz game.py"
 ```
+
+### English notes
+
+- `get_timed_input` uses a daemon thread so slow answers expire.
+- Progress save lets you resume a climb without replaying early levels.
+- Pure stdlib + JSON — no network required.
 
 ---
 
-## فارسی
+## فارسی — شبیه‌ساز دوئل کوییز
 
-### کوییز گیم
+حس رقابت مرحله‌ای: **۷ مرحله**، هر مرحله **۵ سوال**، و فقط **۶ ثانیه** برای پاسخ. سوال‌ها فارسی‌اند (جغرافیا، علوم، ادبیات، ورزش، برنامه‌نویسی). پیشرفت در `quiz_progress.json` ذخیره می‌شود تا از وسط مسیر ادامه دهید.
 
-شبیه‌ساز پایتونی با حال‌وهوای بازی کوییز آو کینگز ایرانی.
-
-
-
-### امکانات
-
-- گیم‌پلی نوبتی سبک کوییز/دوئل (جزئیات در سورس)
-- متن و رابط فارسی
-- اسکریپت سبک پایتون — اجرای آسان و قابل توسعه
-
-### تکنولوژی‌ها
-
-Python
-
-### شروع کار
+### اجرا
 
 ```bash
-git clone https://github.com/yasinfallahati/Quiz_game.git
-cd Quiz_game
-python "Quiz game.py"
+python3 "Quiz game.py"
 ```
 
----
+### جزئیات فنی
 
-`#python` `#quiz` `#game` `#persian` `#console`
+| موضوع | رفتار |
+|--------|--------|
+| زمان‌بندی | ورودی زمان‌دار با `threading` |
+| ذخیره | JSON محلی برای ادامه بازی |
+| وابستگی | فقط کتابخانه استاندارد |
+
+اگر دنبال یک بازی کنسولی «با فشار زمان» برای تمرین پایتون هستید، این همان حس دوئل کوتاه است — بدون سرور و بدون اینترنت.
